@@ -1,0 +1,43 @@
+
+* {
+
+	margin: 0;
+	padding: 0;
+	background-color: grey;
+	color: white;
+	font-family: 'Exo 2', sans-serif;
+}
+
+.topbar {
+	width: 100%;
+	margin-top: 20px;
+	padding-left: 80%;
+}
+
+button {
+
+	border: 1px solid white;
+	border-radius: 15px;
+	padding: 10px;
+}
+
+.masses {
+	height: 100px;
+	width: 70%;
+	padding: 20px;
+	border-bottom: solid 2px yellow;
+}
+
+.massdays {
+	/*border: solid 1px white;*/
+	padding: 10px 20px;
+	float: left;
+}
+
+.clearfloat {
+	clear: both;
+}
+
+.submit {
+	clear: both;
+}
