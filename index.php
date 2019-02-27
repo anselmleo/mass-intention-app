@@ -10,10 +10,12 @@
 
 		print_r($_POST);
 
-		$massTotal = collectMassesAndCount($_POST);
+		$countMass = countMass($_POST);
 
-		if($massTotal>0)
-			echo "<h1>Total Number of Masses: " . $massTotal . "</h1>";
+		$massWeekly = massWeekly($countMass);
+
+		if($massWeekly>0)
+			echo "<h1>Total Number of Masses: " . $massWeekly . "</h1>";
 
 		#split POST array...
 		$collectIntentionData = array_splice($_POST, 0, 6);
@@ -25,16 +27,26 @@
 		if($insert)
 			echo '<br><p class="success">Data entered successfully!</p>';
 
-		$numberOfDays = numberOfDays($_trimmed);
+		$durationInDays = durationInDays($_trimmed);
 
-		$numWeeksAndDays = numberOfWeeks($numberOfDays);
-
-		$amount = calculateAmount($massTotal, $numWeeksAndDays[0]);
-
-		echo "<h1> Your intention for " . $numberOfDays . " days is NGN" . $amount . " only.</h1>";
+		$numWeeksAndDays = numberOfWeeksAndDays($durationInDays);
 
 		echo 	"<h3>Your intention is going to run for " . $numWeeksAndDays[0] . "week(s) " . 
 				$numWeeksAndDays[1] . "days ";
+
+		$dayOfWeek = getStartDayOfWeek($_trimmed);
+
+		echo "<h4> Day of the Week: " . $dayOfWeek . "</h4>";
+
+		$extraMassCount = extraMassCount($dayOfWeek, $numWeeksAndDays[1], $countMass);
+
+		$amount = calculateAmount($massWeekly, $numWeeksAndDays[0], $extraMassCount);
+
+		echo "<h1> Your intention for " . $durationInDays . " days is NGN" . $amount . " only.</h1>";
+
+		echo "<h1> Number of masses for the extra days are: " . $extraMassCount . "</h1>";
+
+		
 
 	}
 

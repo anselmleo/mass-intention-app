@@ -37,7 +37,7 @@
 						<option>Praying for exam success</option>
 						<option>Praying for deliverance from sin and satanic captivity</option>
 						<option>Praying for favour upon business endeavour</option>
-						<option>Thanking God for a new baby boy!</option>
+						<option>Thanking God for a new baby!</option>
 						<option>Thanking God for our new school</option>
 						<option>Thanking God for exam success</option>
 					</select>
