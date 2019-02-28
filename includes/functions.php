@@ -191,6 +191,7 @@
 
 
 	function calculateAmount($totNumMasses,$numberOfWeeks, $extraMassCount) {
+		
 		$amount = $totNumMasses * $numberOfWeeks * 100;
 
 		$amount = $amount + ($extraMassCount*100);

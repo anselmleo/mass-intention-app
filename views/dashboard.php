@@ -43,13 +43,14 @@
 					</select>
 				</datalist>
 				<input type="text" name="intention" list="intention" required>
-			
+			<p id="dateerror"></p>
 			<p>
-				<label for='startdate'>Start Date:</label>
-				<input type="Date" name="startdate" required>
+				<label for="startdate">Start Date:</label>
+				
+				<input id="startdate" type="Date" name="startdate" required>
 
-				<label for='enddate'>End Date:</label>
-				<input type="Date" name="enddate" required>
+				<label for="enddate">End Date:</label>
+				<input id="enddate" type="Date" name="enddate" required>
 			</p>
 			<div class="masses">
 				<p>Masses:</p><hr><br>
@@ -108,7 +109,7 @@
 			
 			</div>
 	
-			<input class="massdays clearfloat" type="submit" name="submit" value="submit">
+			<input class="massdays clearfloat" id="submit" type="submit" name="submit" value="submit">
 
 		</form>
 

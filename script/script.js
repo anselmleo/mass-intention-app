@@ -17,3 +17,30 @@
 
 	}
 
+
+	document.getElementById("enddate").onblur = function() {
+	
+		var startDate = document.getElementById("startdate").value;
+
+		var endDate = document.getElementById("enddate").value;
+
+		var startDateToTime = new Date(startDate).getTime();
+
+		var endDateToTime = new Date(endDate).getTime();
+
+		if((startDateToTime-endDateToTime)>0) {
+
+			document.getElementById("startdate").value = "";
+			
+			document.getElementById("enddate").value = "";
+			
+			document.getElementById("dateerror").innerHTML = "Error: End date cannot be before start date";
+			
+			alert("Your end date must be later than your start date!");
+		}
+
+	}
+
+	document.getElementById("startdate").onfocus = function() {
+		document.getElementById("dateerror").innerHTML = "";
+	}
